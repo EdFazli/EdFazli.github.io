@@ -170,7 +170,7 @@ body.section-show .close-btn{
 	overflow-x:hidden;
 }
 .front-section{
-	background:#FFF;
+	background:#d1c6b0;
 }
 .section{
 	position:fixed;
@@ -181,7 +181,7 @@ body.section-show .close-btn{
 	border:solid 4px #BBB;
 	padding-top:100px;
 	z-index:-9;
-	background:#FFF;
+	background:#d1c6b0;
 	overflow-y:auto;
 	opacity:0;
 	visibility:hidden;
