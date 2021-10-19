@@ -595,7 +595,7 @@ body.section-show .transition-mask:before{
 	-moz-transition:all .3s ease;
 	transition:all .3s ease;
 	position:relative;
-	color:#df1114;
+	color:#708090;
 	text-align:left;
 	text-transform:uppercase;
 	letter-spacing:3px;
@@ -607,7 +607,7 @@ body.section-show .transition-mask:before{
 	content: ' ';
 	height:6px;
 	width:15px;
-	background:#df1114;
+	background:#708090;
 	display:inline-block;
 	*display:inline;
 	*zoom:1;
