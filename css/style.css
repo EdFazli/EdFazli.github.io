@@ -607,7 +607,7 @@ body.section-show .transition-mask:before{
 	content: ' ';
 	height:6px;
 	width:15px;
-	background:#CCC;
+	background:#ed9f6d;
 	display:inline-block;
 	*display:inline;
 	*zoom:1;
