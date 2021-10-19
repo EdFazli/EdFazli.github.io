@@ -509,7 +509,7 @@ body.section-show .transition-mask:before{
 	display:block;
 	width:100%;
 	font-family:Hind, sans-serif;
-	color:#603e32;
+	color:#ed9f6d;
 	text-align:center;
 	font-size:24px;
 	letter-spacing:25px;
@@ -595,7 +595,7 @@ body.section-show .transition-mask:before{
 	-moz-transition:all .3s ease;
 	transition:all .3s ease;
 	position:relative;
-	color:#ed9f6d;
+	color:#560606;
 	text-align:left;
 	text-transform:uppercase;
 	letter-spacing:3px;
@@ -607,7 +607,7 @@ body.section-show .transition-mask:before{
 	content: ' ';
 	height:6px;
 	width:15px;
-	background:#ed9f6d;
+	background:#560606;
 	display:inline-block;
 	*display:inline;
 	*zoom:1;
