@@ -517,7 +517,7 @@ body.section-show .transition-mask:before{
 	text-transform:lowercase;
 }
 .front-person-titles > .t1{
-	left:7px;
+	left:3px;
 	bottom:0;
 	-webkit-transform:rotate(-90deg) translateY(-100%);
 	-moz-transform:rotate(-90deg) translateY(-100%);
@@ -531,7 +531,7 @@ body.section-show .transition-mask:before{
 	transform-origin:0% 0%;
 }
 .front-person-titles > .t2{
-	top:7px;
+	top:3px;
 	left:0;
 	-webkit-transform:translateY(-100%);
 	-moz-transform:translateY(-100%);
