@@ -284,7 +284,7 @@ body.section-show .section.active{
 	left:0;
 	right:0;
 	bottom:0;
-	background:#FFF;
+	background: #f0f0f0;
 	z-index:199;
 	-webkit-transition:all .5s ease;
 	-moz-transition:all .5s ease;
