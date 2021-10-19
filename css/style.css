@@ -376,7 +376,7 @@ body.section-show .transition-mask:before{
 	-webkit-animation: fill .4s both ease;
 	-moz-animation: fill .4s both ease;
 	animation: fill .4s both ease;
-	background:#603e32;
+	background:#d1c6b0;
 }
 
 @-webkit-keyframes fill2{
