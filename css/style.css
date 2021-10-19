@@ -596,7 +596,7 @@ body.section-show .transition-mask:before{
 	transition:all .3s ease;
 	position:relative;
 	color:#708090;
-	text-align:left;
+	text-align:right;
 	text-transform:uppercase;
 	letter-spacing:3px;
 	text-decoration:none;
