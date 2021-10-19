@@ -456,7 +456,7 @@ body.section-show .transition-mask:before{
 	*display:inline;
 	*zoom:1;
 	z-index:10;
-	color:#999;
+	color:#560606;
 	font-family: 'Playfair Display', serif;
 	font-style:italic;
 }
