@@ -181,7 +181,7 @@ body.section-show .close-btn{
 	border:solid 4px #BBB;
 	padding-top:100px;
 	z-index:-9;
-	background:#d1c6b0;
+	background:#FFF;
 	overflow-y:auto;
 	opacity:0;
 	visibility:hidden;
