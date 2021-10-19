@@ -458,7 +458,7 @@ body.section-show .transition-mask:before{
 	z-index:10;
 	color:#9d8860;
 	font-family: 'Permanent Marker', serif;
-	font-style:italic;
+	font-style:normal;
 }
 
 .front-person-img{
