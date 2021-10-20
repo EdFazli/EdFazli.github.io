@@ -31,7 +31,7 @@
 
 
 /*Importing Google Fonts */
-@import url(https://fonts.googleapis.com/css?family=Raleway:400,700,600,300|Playfair+Display:700italic,400italic|Crimson+Text:400italic,600italic|Open+Sans:400,700);
+@import url(https://fonts.googleapis.com/css?family=Raleway:400,700,600,300|Permanent+Marker:400||Playfair+Display:700italic,400italic|Crimson+Text:400italic,600italic|Open+Sans:400,700);
 
 /*=======================================================================
 	General CSS
@@ -457,7 +457,7 @@ body.section-show .transition-mask:before{
 	*zoom:1;
 	z-index:10;
 	color:#9d8860;
-	font-family: Permanent Marker, serif;
+	font-family: 'Permanent Marker', serif;
 	font-style:normal;
 }
 
