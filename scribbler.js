@@ -12,15 +12,12 @@ var getAll = function (selector, scope) {
 // setup typewriter effect in the terminal demo
 if (document.getElementsByClassName('demo').length > 0) {
   var i = 0;
-  var txt = `scribbler
-            [Entry mode; press Ctrl+D to save and quit; press Ctrl+C to quit without saving]
-
-            ###todo for new year dinner party
-
-            - milk
-            - butter
-            - green onion
-            - lots and lots of kiwis 🥝`;
+  var txt = `Hi there!
+            My name is EdFazli. I'm a cloud engineer in Malaysia.
+            I specialize in AWS cloud and Kubernetes.
+            I have worked with various company on their cloud journey.
+            There are many benefits in the cloud and if you would to know more,
+            lets get in touch 😉`;
   var speed = 60;
 
   function typeItOut () {
