@@ -13,6 +13,7 @@ var getAll = function (selector, scope) {
 if (document.getElementsByClassName('demo').length > 0) {
   var i = 0;
   var txt = `Hi there!
+            
             My name is EdFazli. I'm a cloud engineer in Malaysia.
 
             I specialize in AWS cloud and Kubernetes.
@@ -20,7 +21,7 @@ if (document.getElementsByClassName('demo').length > 0) {
             I have worked with various company on their cloud journey.
 
             There are many benefits in the cloud and if you would to know more,
-            
+
             lets get in touch 😉`;
   var speed = 60;
 
