@@ -54,7 +54,7 @@ const about = {
   imageLink: require("../editable-stuff/SyedAhmadFazli.jpg"),
   imageSize: 375,
   message:
-    "My name is Syed Ahmad Fazli. qwertyqwerty",
+    "My name is Syed Ahmad Fazli. I'm a cloud engineer with a passion on DevOps and containers. With a decade of IT experience including 5 years in cloud industry, my goal is to help companies journey to onboard and leverage the benefits of cloud.",
   resume: require("../editable-stuff/SYEDAHMADFAZLI_Resume.pdf"),
 };
 
@@ -67,8 +67,8 @@ const repos = {
   show: true,
   heading: "Recent Projects",
   gitHubUsername: "EdFazli", //i.e."johnDoe12Gh"
-  reposLength: 4,
-  specificRepos: [],
+  reposLength: 5,
+  specificRepos: ["eks-fargate-sample-1", "k8s-autoscale-demo", "vagrant-packer-ansible-samples", "basicTerraform-azurePipelines", "terraform" ],
 };
 
 // Leadership SECTION
