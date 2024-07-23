@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/home/static/css/main.fe927caf.css",
+    "main.js": "/home/static/js/main.be037cf8.js",
+    "static/js/787.4b24f717.chunk.js": "/home/static/js/787.4b24f717.chunk.js",
+    "static/media/SYEDAHMADFAZLI_Resume.pdf": "/home/static/media/SYEDAHMADFAZLI_Resume.8fe02c057446ec577c0b.pdf",
+    "static/media/SyedAhmadFazli.jpg": "/home/static/media/SyedAhmadFazli.27cc5f2e0cff57081e7e.jpg",
+    "index.html": "/home/index.html",
+    "main.fe927caf.css.map": "/home/static/css/main.fe927caf.css.map",
+    "main.be037cf8.js.map": "/home/static/js/main.be037cf8.js.map",
+    "787.4b24f717.chunk.js.map": "/home/static/js/787.4b24f717.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.fe927caf.css",
+    "static/js/main.be037cf8.js"
+  ]
+}
