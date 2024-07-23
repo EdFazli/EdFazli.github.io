@@ -67,7 +67,7 @@ const repos = {
   show: true,
   heading: "Recent Projects",
   gitHubUsername: "EdFazli", //i.e."johnDoe12Gh"
-  reposLength: 5,
+  reposLength: 0,
   specificRepos: ["eks-fargate-sample-1", "k8s-autoscale-demo", "vagrant-packer-ansible-samples", "basicTerraform-azurePipelines", "terraform" ],
 };
 
