@@ -131,13 +131,13 @@ const experiences = {
   heading: "Experiences",
   data: [
     {
-      role: 'Cloud Engineer',// Here Add Company Name
-      companylogo: require('../assets/img/lazada.jpg'),
+      role: 'Lazada Malaysia (Cloud Engineer)',// Here Add Company Name
+      // companylogo: require('../assets/img/lazada.jpg'),
       date: 'September 2023 – Present',
     },
     {
-      role: 'Cloud Engineer',
-      companylogo: require('../assets/img/ecv.png'),
+      role: 'ECloudvalley Technology Malaysia (Cloud Engineer)',
+      // companylogo: require('../assets/img/ecv.png'),
       date: 'January 2022 – August 2023',
     },
   ]
