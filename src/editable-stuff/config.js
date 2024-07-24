@@ -9,7 +9,7 @@ const mainBody = {
   firstName: "Syed",
   middleName: "Ahmad",
   lastName: "Fazli",
-  message: " Helping businesses with cloud technology. ",
+  message: " Helping businesses leveraging cloud technology - Amazon Web Services | Alibaba Cloud",
   icons: [
     {
       image: "fa-github",
@@ -101,7 +101,8 @@ const skills = {
   heading: "Skills",
   hardSkills: [
     { name: "Cloud Architecture Design", value: 60 },
-    { name: "Cloud Security", value: 50 },
+    { name: "Cloud Security", value: 60 },
+    { name: "Cloud Cost Optimzation", value: 70 },
     { name: "Kubernetes/Containers", value: 45 },
     { name: "Terraform", value: 50 },
     { name: "CI/CD", value: 45 },
