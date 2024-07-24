@@ -1,17 +1,18 @@
 {
   "files": {
     "main.css": "/static/css/main.fe927caf.css",
-    "main.js": "/static/js/main.9a350d28.js",
+    "main.js": "/static/js/main.6752bdf1.js",
     "static/js/787.4b24f717.chunk.js": "/static/js/787.4b24f717.chunk.js",
     "static/media/SYEDAHMADFAZLI_Resume.pdf": "/static/media/SYEDAHMADFAZLI_Resume.8fe02c057446ec577c0b.pdf",
     "static/media/SyedAhmadFazli.jpg": "/static/media/SyedAhmadFazli.27cc5f2e0cff57081e7e.jpg",
+    "static/media/lazada.jpg": "/static/media/lazada.18feb5537cfb2d6f5495.jpg",
     "index.html": "/index.html",
     "main.fe927caf.css.map": "/static/css/main.fe927caf.css.map",
-    "main.9a350d28.js.map": "/static/js/main.9a350d28.js.map",
+    "main.6752bdf1.js.map": "/static/js/main.6752bdf1.js.map",
     "787.4b24f717.chunk.js.map": "/static/js/787.4b24f717.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.fe927caf.css",
-    "static/js/main.9a350d28.js"
+    "static/js/main.6752bdf1.js"
   ]
 }
