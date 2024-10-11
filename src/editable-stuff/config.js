@@ -54,7 +54,7 @@ const about = {
   imageLink: require("../editable-stuff/SyedAhmadFazli.jpg"),
   imageSize: 375,
   message:
-    "My name is Syed Ahmad Fazli. I'm a cloud engineer with a passion on DevOps and containers. With a decade of IT experience including 5 years in cloud industry, my goal is to help companies journey to onboard and leverage the benefits of cloud.",
+    "My name is Syed Ahmad Fazli. I'm a senior cloud consultant with a passion on DevOps and containers. With a decade of IT experience including 5 years in cloud industry, my goal is to help companies journey to onboard and leverage the benefits of cloud.",
   resume: require("../editable-stuff/SYEDAHMADFAZLI_Resume.pdf"),
 };
 
@@ -131,10 +131,15 @@ const experiences = {
   show: true,
   heading: "Experiences",
   data: [
+     {
+      role: 'Galactic Network Sdn Bhd (Senior Cloud Consultant)',// Here Add Company Name
+      // companylogo: require('../assets/img/lazada.jpg'),
+      date: 'September 2024 – Present',
+    },
     {
       role: 'Lazada Malaysia (Cloud Engineer)',// Here Add Company Name
       // companylogo: require('../assets/img/lazada.jpg'),
-      date: 'September 2023 – Present',
+      date: 'September 2023 – August 2024',
     },
     {
       role: 'ECloudvalley Technology Malaysia (Cloud Engineer)',
