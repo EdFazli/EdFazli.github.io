@@ -9,8 +9,7 @@ A professional Jekyll-based technical blog hosted on GitHub Pages with custom do
 - **Fast Performance**: Optimized CSS, lazy loading, and minimal JavaScript
 - **Blog Features**: Categories, tags, search, pagination, and table of contents
 - **Social Integration**: Share buttons, comments (Disqus), and social links
-- **Custom Domain**: Configured for custom domain with HTTPS
-- **GitHub Pages Ready**: Optimized for GitHub Pages deployment
+- **GitHub Pages Ready**: Optimized for GitHub Pages deployment with default domain
 
 ## 🛠️ Tech Stack
 
@@ -23,7 +22,7 @@ A professional Jekyll-based technical blog hosted on GitHub Pages with custom do
 
 ## 📁 Project Structure
 
-```
+```md
 ├── _config.yml          # Jekyll configuration
 ├── _layouts/            # Page layouts
 │   ├── default.html     # Base layout
@@ -57,34 +56,39 @@ A professional Jekyll-based technical blog hosted on GitHub Pages with custom do
 ### Local Development
 
 1. **Clone the repository**
+
    ```bash
    git clone https://github.com/EdFazli/EdFazli.github.io.git
    cd EdFazli.github.io
    ```
 
 2. **Install dependencies**
+
    ```bash
    bundle install
    ```
 
 3. **Run locally**
+
    ```bash
    bundle exec jekyll serve
    ```
 
 4. **Open in browser**
-   ```
+
+   ```md
    http://localhost:4000
    ```
 
 ### Customization
 
 1. **Update site configuration** in `_config.yml`:
+
    ```yaml
    title: "Your Blog Title"
    email: your-email@example.com
    description: "Your blog description"
-   url: "https://yourdomain.com"
+   url: "https://yourusername.github.io"
    author:
      name: "Your Name"
      bio: "Your bio"
@@ -159,6 +163,7 @@ The site uses Inter for body text and JetBrains Mono for code. Update font impor
 ### GitHub Pages (Automatic)
 
 1. **Push to GitHub**:
+
    ```bash
    git add .
    git commit -m "Initial commit"
@@ -172,10 +177,9 @@ The site uses Inter for body text and JetBrains Mono for code. Update font impor
    - Choose "main" branch
    - Save settings
 
-3. **Custom Domain** (Optional):
-   - Update `CNAME` file with your domain
-   - Configure DNS settings with your domain provider
-   - Enable "Enforce HTTPS" in GitHub Pages settings
+3. **Access your site**:
+   - Your site will be available at `https://edfazli.github.io`
+   - GitHub Pages will automatically build and deploy your site
 
 ### Manual Deployment
 
@@ -228,6 +232,7 @@ The contact form uses Formspree. Update the form action in `_pages/contact.md`:
 ## 📱 Responsive Design
 
 The site is fully responsive with breakpoints at:
+
 - Mobile: < 480px
 - Tablet: < 768px
 - Desktop: > 768px
