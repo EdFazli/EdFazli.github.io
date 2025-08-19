@@ -5,7 +5,7 @@ description: >-
   Professional technical blog covering software development, cloud computing,
   DevOps, and emerging technologies. Insights from a seasoned developer.
 baseurl: ""
-url: "https://edfazli.github.io" # Default GitHub Pages domain
+url: "https://edfazli.github.io" # GitHub Pages domain
 twitter_username: <your-twitter>
 github_username: EdFazli
 linkedin_username: <your-linkedin>
