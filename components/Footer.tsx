@@ -10,8 +10,15 @@ export default function Footer() {
         <div className="grid md:grid-cols-4 gap-8">
           {/* Brand */}
           <div className="md:col-span-2">
-            <Link href="/" className="text-2xl font-bold gradient-text mb-4 block">
-              Ed Fazli
+            <Link href="/" className="flex items-center gap-3 mb-4 hover:opacity-80 transition-opacity">
+              <img 
+                src="/images/logo-icon.svg" 
+                alt="Ed Fazli Logo" 
+                className="w-8 h-8"
+              />
+              <span className="text-2xl font-bold gradient-text">
+                Ed Fazli
+              </span>
             </Link>
             <p className="text-gray-600 dark:text-gray-300 mb-4 max-w-md">
               Software engineer passionate about building scalable solutions and sharing 

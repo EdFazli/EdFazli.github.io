@@ -23,6 +23,11 @@ export const metadata = {
   keywords: ['blog', 'technology', 'software development', 'cloud computing', 'programming'],
   authors: [{ name: 'Ed Fazli' }],
   creator: 'Ed Fazli',
+  icons: {
+    icon: '/images/favicon.svg',
+    shortcut: '/images/favicon.svg',
+    apple: '/images/logo-icon.svg',
+  },
   openGraph: {
     type: 'website',
     locale: 'en_US',
@@ -30,12 +35,21 @@ export const metadata = {
     title: 'Ed Fazli - Technical Blog',
     description: 'Professional technical blog covering software development, cloud computing, and technology insights.',
     siteName: 'Ed Fazli Blog',
+    images: [
+      {
+        url: '/images/logo.svg',
+        width: 200,
+        height: 60,
+        alt: 'Ed Fazli Technical Blog Logo',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Ed Fazli - Technical Blog',
     description: 'Professional technical blog covering software development, cloud computing, and technology insights.',
     creator: '@edfazli',
+    images: ['/images/logo.svg'],
   },
   robots: {
     index: true,
@@ -57,6 +71,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
+      <head>
+        <link rel="icon" href="/images/favicon.svg" type="image/svg+xml" />
+        <link rel="apple-touch-icon" href="/images/logo-icon.svg" />
+      </head>
       <body className={`${inter.variable} ${jetbrainsMono.variable} font-sans`}>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <div className="min-h-screen bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100">
