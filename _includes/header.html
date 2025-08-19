@@ -1,0 +1,165 @@
+<header class="site-header">
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-brand">
+                <a href="{{ '/' | relative_url }}" class="brand-link">
+                    <div class="brand-logo">EF</div>
+                    <span class="brand-text">{{ site.title | split: ' ' | first }}</span>
+                </a>
+            </div>
+            
+            <div class="navbar-menu" id="navbar-menu">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a href="{{ '/' | relative_url }}" class="nav-link" data-page="home">
+                            <i class="fas fa-home"></i>
+                            Home
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{ '/blog' | relative_url }}" class="nav-link" data-page="blog">
+                            <i class="fas fa-blog"></i>
+                            Blog
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{ '/categories' | relative_url }}" class="nav-link" data-page="categories">
+                            <i class="fas fa-folder-open"></i>
+                            Categories
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{ '/tags' | relative_url }}" class="nav-link" data-page="tags">
+                            <i class="fas fa-tags"></i>
+                            Tags
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{ '/about' | relative_url }}" class="nav-link" data-page="about">
+                            <i class="fas fa-user"></i>
+                            About
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{ '/contact' | relative_url }}" class="nav-link" data-page="contact">
+                            <i class="fas fa-envelope"></i>
+                            Contact
+                        </a>
+                    </li>
+                </ul>
+                
+                <div class="navbar-actions">
+                    <button class="search-toggle" aria-label="Search posts" title="Search">
+                        <i class="fas fa-search"></i>
+                    </button>
+                    <button class="theme-toggle" aria-label="Toggle dark mode" title="Toggle Theme">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <button class="navbar-toggle" id="navbar-toggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+    
+    <!-- Professional Search Modal -->
+    <div class="search-modal" id="search-modal">
+        <div class="search-container">
+            <div class="search-header">
+                <div style="display: flex; align-items: center; gap: var(--spacing-3); margin-right: var(--spacing-4);">
+                    <i class="fas fa-search" style="color: var(--accent-primary);"></i>
+                </div>
+                <input type="text" class="search-input" placeholder="Search articles, topics, or technologies..." id="search-input" autocomplete="off">
+                <button class="search-close" id="search-close" aria-label="Close search">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="search-results" id="search-results">
+                <div style="text-align: center; padding: var(--spacing-8); color: var(--text-muted);">
+                    <i class="fas fa-search" style="font-size: var(--font-size-3xl); margin-bottom: var(--spacing-4); opacity: 0.5;"></i>
+                    <p>Start typing to search articles...</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Reading Progress Bar -->
+    <div class="reading-progress" id="reading-progress" style="
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 0%;
+        height: 3px;
+        background: var(--accent-gradient);
+        z-index: 1001;
+        transition: width 0.1s ease;
+        opacity: 0;
+    "></div>
+</header>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Header scroll effect
+    const header = document.querySelector('.site-header');
+    const progressBar = document.getElementById('reading-progress');
+    
+    window.addEventListener('scroll', function() {
+        if (window.scrollY > 100) {
+            header.classList.add('scrolled');
+        } else {
+            header.classList.remove('scrolled');
+        }
+        
+        // Show progress bar on blog posts
+        if (document.querySelector('.post')) {
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            
+            progressBar.style.width = scrolled + '%';
+            progressBar.style.opacity = winScroll > 100 ? '1' : '0';
+        }
+    });
+    
+    // Active navigation highlighting
+    const currentPage = window.location.pathname;
+    const navLinks = document.querySelectorAll('.nav-link');
+    
+    navLinks.forEach(link => {
+        const href = link.getAttribute('href');
+        if (currentPage === href || (currentPage === '/' && href === '/') || 
+            (currentPage.includes(href) && href !== '/')) {
+            link.classList.add('active');
+        }
+    });
+    
+    // Theme toggle enhancement
+    const themeToggle = document.querySelector('.theme-toggle');
+    const themeIcon = themeToggle.querySelector('i');
+    
+    // Set initial theme icon
+    const currentTheme = localStorage.getItem('theme') || 'light';
+    updateThemeIcon(currentTheme);
+    
+    themeToggle.addEventListener('click', function() {
+        const theme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+        document.documentElement.setAttribute('data-theme', theme);
+        localStorage.setItem('theme', theme);
+        updateThemeIcon(theme);
+    });
+    
+    function updateThemeIcon(theme) {
+        if (theme === 'dark') {
+            themeIcon.className = 'fas fa-sun';
+            themeToggle.setAttribute('title', 'Switch to light mode');
+        } else {
+            themeIcon.className = 'fas fa-moon';
+            themeToggle.setAttribute('title', 'Switch to dark mode');
+        }
+    }
+});
+</script>

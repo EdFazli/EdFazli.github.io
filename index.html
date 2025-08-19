@@ -1,1 +1,162 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"/><link rel="shortcut icon" href="/favicon.ico"/><meta name="viewport" content="width=device-width,initial-scale=1"/><link href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" rel="stylesheet"/><meta name="theme-color" content="#000000"/><meta name="description" content="My name is Syed Ahmad Fazli. I'm a senior cloud consultant with a passion on DevOps and containers. With a decade of IT experience including 5 years in cloud industry, my goal is to help companies journey to onboard and leverage the benefits of cloud."/><link rel="apple-touch-icon" href="logo192.png"/><link rel="manifest" href="/manifest.json"/><meta property="twitter:image" content="/social-image.png"/><meta property="og:image" content="/social-image.png"/><title>Syed Ahmad Fazli</title><script defer="defer" src="/static/js/main.cd9d437b.js"></script><link href="/static/css/main.fe927caf.css" rel="stylesheet"></head><body><noscript>You need to enable JavaScript to run this app.</noscript><div id="root"></div></body></html>
+---
+layout: default
+title: Home
+---
+
+<div class="hero-section animate-fade-in-up">
+  <div class="hero-content">
+    <h1 class="hero-title gradient-text">{{ site.title }}</h1>
+    <p class="hero-description">{{ site.description }}</p>
+    <div class="hero-buttons">
+      <a href="#latest-posts" class="btn btn-primary btn-lg">
+        <i class="fas fa-book-open"></i>
+        Read Latest Posts
+      </a>
+      <a href="/about" class="btn btn-secondary btn-lg">
+        <i class="fas fa-user"></i>
+        About Me
+      </a>
+    </div>
+    <div class="hero-stats">
+      <div class="hero-stat">
+        <span class="hero-stat-number">{{ site.posts.size }}+</span>
+        <span class="hero-stat-label">Articles</span>
+      </div>
+      <div class="hero-stat">
+        <span class="hero-stat-number">5+</span>
+        <span class="hero-stat-label">Years Experience</span>
+      </div>
+      <div class="hero-stat">
+        <span class="hero-stat-number">50K+</span>
+        <span class="hero-stat-label">Readers</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<section id="latest-posts" class="posts-section">
+  <div class="container">
+    <h2 class="section-title">Latest Posts</h2>
+    <p class="section-subtitle">Discover insights on modern web development, cloud computing, and emerging technologies</p>
+    
+    <div class="posts-grid">
+      {% for post in site.posts limit:6 %}
+        <article class="post-card animate-fade-in-up">
+          <div class="post-meta">
+            <div class="post-date">
+              <i class="fas fa-calendar-alt"></i>
+              <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%B %d, %Y" }}</time>
+            </div>
+            {% if post.categories.size > 0 %}
+              <span class="post-category">{{ post.categories | first | capitalize }}</span>
+            {% endif %}
+          </div>
+          
+          <h3 class="post-title">
+            <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+          </h3>
+          
+          <p class="post-excerpt">{{ post.excerpt | strip_html | truncatewords: 25 }}</p>
+          
+          {% if post.tags.size > 0 %}
+            <div class="post-tags">
+              {% for tag in post.tags limit:3 %}
+                <span class="tag">{{ tag }}</span>
+              {% endfor %}
+            </div>
+          {% endif %}
+          
+          <div class="post-footer">
+            <a href="{{ post.url | relative_url }}" class="read-more">
+              Read More
+              <i class="fas fa-arrow-right"></i>
+            </a>
+            <div class="post-stats">
+              <div class="read-time">
+                <i class="fas fa-clock"></i>
+                <span>{{ post.content | number_of_words | divided_by: 200 | append: ' min read' }}</span>
+              </div>
+            </div>
+          </div>
+        </article>
+      {% endfor %}
+    </div>
+    
+    <div class="view-all-posts">
+      <a href="/blog" class="btn btn-outline btn-lg">
+        <i class="fas fa-th-large"></i>
+        View All Posts
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="featured-categories">
+  <div class="container">
+    <h2 class="section-title">Explore Topics</h2>
+    <p class="section-subtitle">Dive deep into the technologies and concepts that shape modern development</p>
+    
+    <div class="categories-grid">
+      <div class="category-card animate-fade-in-up">
+        <div class="category-icon">💻</div>
+        <h3>Software Development</h3>
+        <p>Best practices, design patterns, and coding techniques for building robust applications</p>
+        <a href="/categories/development">
+          Explore Articles
+          <i class="fas fa-arrow-right"></i>
+        </a>
+      </div>
+      
+      <div class="category-card animate-fade-in-up">
+        <div class="category-icon">☁️</div>
+        <h3>Cloud Computing</h3>
+        <p>AWS, Azure, GCP insights, serverless architectures, and cloud-native solutions</p>
+        <a href="/categories/cloud">
+          Explore Articles
+          <i class="fas fa-arrow-right"></i>
+        </a>
+      </div>
+      
+      <div class="category-card animate-fade-in-up">
+        <div class="category-icon">🔧</div>
+        <h3>DevOps & Infrastructure</h3>
+        <p>CI/CD pipelines, automation, containerization, and infrastructure as code</p>
+        <a href="/categories/devops">
+          Explore Articles
+          <i class="fas fa-arrow-right"></i>
+        </a>
+      </div>
+      
+      <div class="category-card animate-fade-in-up">
+        <div class="category-icon">🚀</div>
+        <h3>Tech Trends</h3>
+        <p>Emerging technologies, industry insights, and future-focused development</p>
+        <a href="/categories/trends">
+          Explore Articles
+          <i class="fas fa-arrow-right"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="newsletter-section" style="background-color: var(--bg-primary); padding: var(--spacing-20) 0;">
+  <div class="container">
+    <div class="newsletter-content" style="max-width: var(--max-width-2xl); margin: 0 auto; text-align: center;">
+      <h2 class="section-title">Stay Updated</h2>
+      <p class="section-subtitle">Get the latest articles and insights delivered directly to your inbox</p>
+      
+      <form class="newsletter-form" style="max-width: 400px; margin: 0 auto;" action="#" method="post">
+        <input type="email" placeholder="Enter your email address" required>
+        <button type="submit" class="btn btn-primary">
+          <i class="fas fa-paper-plane"></i>
+          Subscribe
+        </button>
+      </form>
+      
+      <p style="margin-top: var(--spacing-4); font-size: var(--font-size-sm); color: var(--text-muted);">
+        No spam, unsubscribe at any time. Join 1000+ developers already subscribed.
+      </p>
+    </div>
+  </div>
+</section>
