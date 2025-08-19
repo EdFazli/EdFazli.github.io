@@ -8,7 +8,7 @@ interface ShareButtonsProps {
 }
 
 export default function ShareButtons({ title, url }: ShareButtonsProps) {
-  const fullUrl = `${window.location.origin}${url}`
+  const fullUrl = typeof window !== 'undefined' ? `${window.location.origin}${url}` : url
   
   const shareLinks = {
     twitter: `https://twitter.com/intent/tweet?text=${encodeURIComponent(title)}&url=${encodeURIComponent(fullUrl)}`,
@@ -26,7 +26,7 @@ export default function ShareButtons({ title, url }: ShareButtonsProps) {
   }
 
   const handleNativeShare = async () => {
-    if (navigator.share) {
+    if (typeof navigator !== 'undefined' && navigator.share) {
       try {
         await navigator.share({
           title,
@@ -38,11 +38,13 @@ export default function ShareButtons({ title, url }: ShareButtonsProps) {
     }
   }
 
+  const hasNativeShare = typeof navigator !== 'undefined' && 'share' in navigator
+
   return (
     <div className="flex items-center gap-3">
       <span className="text-sm font-medium text-gray-600 dark:text-gray-300">Share:</span>
       
-      {navigator.share && (
+      {hasNativeShare && (
         <button
           onClick={handleNativeShare}
           className="p-2 rounded-lg bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"

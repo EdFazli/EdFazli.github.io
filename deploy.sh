@@ -8,6 +8,17 @@ if [ ! -d ".git" ]; then
     exit 1
 fi
 
+# Test build locally first
+echo "🔨 Testing build process..."
+npm run build
+
+if [ $? -ne 0 ]; then
+    echo "❌ Build failed. Please fix the errors before deploying."
+    exit 1
+fi
+
+echo "✅ Build successful!"
+
 # Check if there are any changes to commit
 if [ -z "$(git status --porcelain)" ]; then
     echo "✅ No changes to commit. Repository is clean."

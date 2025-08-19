@@ -2,6 +2,7 @@
 node_modules/
 .pnp
 .pnp.js
+# Keep package-lock.json for reproducible builds
 
 # Testing
 coverage/
