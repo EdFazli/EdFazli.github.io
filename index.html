@@ -56,7 +56,7 @@ title: Home
         
         <div class="posts-grid">
             {% for post in site.posts limit:6 %}
-            <article class="post-card animate-fade-in-up" style="animation-delay: {{ forloop.index | times: 0.1 }}s;">
+            <article class="post-card animate-fade-in-up">
                 <div class="post-content">
                     <div class="post-meta">
                         <time datetime="{{ post.date | date_to_xmlschema }}">
