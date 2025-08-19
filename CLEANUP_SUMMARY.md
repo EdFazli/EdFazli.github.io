@@ -3,6 +3,7 @@
 ## 🧹 Files and Directories Removed
 
 ### Jekyll-specific directories:
+
 - `_includes/` - Jekyll includes/partials
 - `_layouts/` - Jekyll layout templates  
 - `_pages/` - Jekyll static pages
@@ -11,12 +12,14 @@
 - `assets/` - Jekyll assets directory
 
 ### Jekyll configuration files:
+
 - `_config.yml` - Jekyll configuration
 - `Gemfile` - Ruby dependencies
 - `Gemfile.lock` - Ruby dependency lock file
 - `index.html` - Jekyll homepage (replaced with Next.js `app/page.tsx`)
 
 ### Jekyll build/cache files:
+
 - `_site/` - Jekyll build output
 - `.jekyll-cache/` - Jekyll cache
 - `.jekyll-metadata` - Jekyll metadata
@@ -24,6 +27,7 @@
 ## ✅ Next.js Files Retained
 
 ### Core Next.js structure:
+
 - `app/` - Next.js App Router pages
 - `components/` - React components
 - `lib/` - Utility functions
@@ -31,6 +35,7 @@
 - `content/posts/` - Markdown blog posts
 
 ### Configuration files:
+
 - `package.json` - Node.js dependencies
 - `next.config.js` - Next.js configuration
 - `tsconfig.json` - TypeScript configuration
@@ -38,6 +43,7 @@
 - `postcss.config.js` - PostCSS configuration
 
 ### Development files:
+
 - `.github/workflows/` - GitHub Actions for deployment
 - `.gitignore` - Updated for Next.js
 - `setup.sh` - Installation script
