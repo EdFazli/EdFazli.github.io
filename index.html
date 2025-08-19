@@ -97,7 +97,7 @@ title: Home
             {% endfor %}
         </div>
         
-        <div class="text-center mt-12">
+        <div style="text-align: center; margin-top: var(--space-12);">
             <a href="{{ '/blog' | relative_url }}" class="btn btn-primary btn-lg">
                 <i class="fas fa-th-large"></i>
                 View All Articles
@@ -107,7 +107,7 @@ title: Home
 </section>
 
 <!-- Features Section -->
-<section class="py-24 bg-gray-50">
+<section style="padding: var(--space-24) 0; background-color: var(--gray-50);">
     <div class="container">
         <div class="section-header">
             <h2 class="section-title">What I Write About</h2>
@@ -116,50 +116,52 @@ title: Home
             </p>
         </div>
         
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div class="text-center p-8 bg-white rounded-2xl shadow-md border border-gray-200 animate-fade-in-up">
-                <div class="w-16 h-16 bg-gradient-to-br from-primary to-accent rounded-xl flex items-center justify-center mx-auto mb-6">
-                    <i class="fas fa-code text-white text-2xl"></i>
+        <div class="features-grid">
+            <div class="feature-card animate-fade-in-up">
+                <div class="feature-icon">
+                    <i class="fas fa-code"></i>
                 </div>
-                <h3 class="text-xl font-bold mb-4 text-gray-900">Web Development</h3>
-                <p class="text-gray-600">Modern frameworks, best practices, and cutting-edge techniques for building exceptional web applications.</p>
+                <h3>Web Development</h3>
+                <p>Modern frameworks, best practices, and cutting-edge techniques for building exceptional web applications.</p>
             </div>
             
-            <div class="text-center p-8 bg-white rounded-2xl shadow-md border border-gray-200 animate-fade-in-up" style="animation-delay: 0.2s;">
-                <div class="w-16 h-16 bg-gradient-to-br from-primary to-accent rounded-xl flex items-center justify-center mx-auto mb-6">
-                    <i class="fas fa-cloud text-white text-2xl"></i>
+            <div class="feature-card animate-fade-in-up" style="animation-delay: 0.2s;">
+                <div class="feature-icon">
+                    <i class="fas fa-cloud"></i>
                 </div>
-                <h3 class="text-xl font-bold mb-4 text-gray-900">Cloud Computing</h3>
-                <p class="text-gray-600">AWS, serverless architectures, and cloud-native solutions for scalable and efficient applications.</p>
+                <h3>Cloud Computing</h3>
+                <p>AWS, serverless architectures, and cloud-native solutions for scalable and efficient applications.</p>
             </div>
             
-            <div class="text-center p-8 bg-white rounded-2xl shadow-md border border-gray-200 animate-fade-in-up" style="animation-delay: 0.4s;">
-                <div class="w-16 h-16 bg-gradient-to-br from-primary to-accent rounded-xl flex items-center justify-center mx-auto mb-6">
-                    <i class="fas fa-cogs text-white text-2xl"></i>
+            <div class="feature-card animate-fade-in-up" style="animation-delay: 0.4s;">
+                <div class="feature-icon">
+                    <i class="fas fa-cogs"></i>
                 </div>
-                <h3 class="text-xl font-bold mb-4 text-gray-900">DevOps & Tools</h3>
-                <p class="text-gray-600">Automation, CI/CD pipelines, and developer tools that enhance productivity and code quality.</p>
+                <h3>DevOps & Tools</h3>
+                <p>Automation, CI/CD pipelines, and developer tools that enhance productivity and code quality.</p>
             </div>
         </div>
     </div>
 </section>
 
 <!-- CTA Section -->
-<section class="py-24 bg-gradient-to-br from-primary to-primary-dark text-white">
-    <div class="container text-center">
-        <h2 class="text-4xl font-bold mb-6">Ready to Start Learning?</h2>
-        <p class="text-xl mb-8 text-primary-light max-w-2xl mx-auto">
-            Join thousands of developers who stay updated with the latest trends and best practices in technology.
-        </p>
-        <div class="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="{{ '/blog' | relative_url }}" class="btn bg-white text-primary hover:bg-gray-100 btn-lg">
-                <i class="fas fa-rocket"></i>
-                Start Reading
-            </a>
-            <a href="{{ '/contact' | relative_url }}" class="btn border-2 border-white text-white hover:bg-white hover:text-primary btn-lg">
-                <i class="fas fa-envelope"></i>
-                Get In Touch
-            </a>
+<section class="cta-section">
+    <div class="container">
+        <div class="cta-content">
+            <h2>Ready to Start Learning?</h2>
+            <p>
+                Join thousands of developers who stay updated with the latest trends and best practices in technology.
+            </p>
+            <div class="cta-buttons">
+                <a href="{{ '/blog' | relative_url }}" class="btn btn-white btn-lg">
+                    <i class="fas fa-rocket"></i>
+                    Start Reading
+                </a>
+                <a href="{{ '/contact' | relative_url }}" class="btn btn-outline btn-lg">
+                    <i class="fas fa-envelope"></i>
+                    Get In Touch
+                </a>
+            </div>
         </div>
     </div>
 </section>
