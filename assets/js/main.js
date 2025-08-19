@@ -14,33 +14,98 @@ document.addEventListener('DOMContentLoaded', function() {
 function initializeNavigation() {
     const navbarToggle = document.getElementById('navbar-toggle');
     const navbarMenu = document.getElementById('navbar-menu');
+    const navLinks = document.querySelectorAll('.nav-link');
     
     if (navbarToggle && navbarMenu) {
-        navbarToggle.addEventListener('click', function() {
-            navbarMenu.classList.toggle('active');
-            navbarToggle.classList.toggle('active');
-            
-            // Prevent body scroll when menu is open
-            document.body.style.overflow = navbarMenu.classList.contains('active') ? 'hidden' : '';
+        navbarToggle.addEventListener('click', function(e) {
+            e.stopPropagation();
+            toggleMobileMenu();
+        });
+        
+        // Close menu when clicking on nav links (mobile)
+        navLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                if (window.innerWidth <= 767) {
+                    closeMobileMenu();
+                }
+            });
         });
         
         // Close menu when clicking outside
         document.addEventListener('click', function(e) {
             if (!navbarToggle.contains(e.target) && !navbarMenu.contains(e.target)) {
-                navbarMenu.classList.remove('active');
-                navbarToggle.classList.remove('active');
-                document.body.style.overflow = '';
+                closeMobileMenu();
             }
         });
         
         // Close menu when pressing Escape
         document.addEventListener('keydown', function(e) {
             if (e.key === 'Escape' && navbarMenu.classList.contains('active')) {
-                navbarMenu.classList.remove('active');
-                navbarToggle.classList.remove('active');
-                document.body.style.overflow = '';
+                closeMobileMenu();
             }
         });
+        
+        // Handle window resize
+        window.addEventListener('resize', function() {
+            if (window.innerWidth > 767) {
+                closeMobileMenu();
+            }
+        });
+        
+        // Prevent scrolling when menu is open on mobile
+        function toggleMobileMenu() {
+            const isActive = navbarMenu.classList.contains('active');
+            
+            if (isActive) {
+                closeMobileMenu();
+            } else {
+                openMobileMenu();
+            }
+        }
+        
+        function openMobileMenu() {
+            navbarMenu.classList.add('active');
+            navbarToggle.classList.add('active');
+            document.body.style.overflow = 'hidden';
+            
+            // Add backdrop
+            const backdrop = document.createElement('div');
+            backdrop.className = 'mobile-menu-backdrop';
+            backdrop.style.cssText = `
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(0, 0, 0, 0.5);
+                z-index: 999;
+                opacity: 0;
+                transition: opacity var(--transition-base);
+            `;
+            document.body.appendChild(backdrop);
+            
+            // Animate backdrop
+            setTimeout(() => {
+                backdrop.style.opacity = '1';
+            }, 10);
+            
+            backdrop.addEventListener('click', closeMobileMenu);
+        }
+        
+        function closeMobileMenu() {
+            navbarMenu.classList.remove('active');
+            navbarToggle.classList.remove('active');
+            document.body.style.overflow = '';
+            
+            // Remove backdrop
+            const backdrop = document.querySelector('.mobile-menu-backdrop');
+            if (backdrop) {
+                backdrop.style.opacity = '0';
+                setTimeout(() => {
+                    backdrop.remove();
+                }, 250);
+            }
+        }
     }
 }
 
