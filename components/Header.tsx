@@ -21,8 +21,15 @@ export default function Header() {
       <nav className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <Link href="/" className="text-2xl font-bold gradient-text">
-            Ed Fazli
+          <Link href="/" className="flex items-center gap-3 hover:opacity-80 transition-opacity">
+            <img 
+              src="/images/logo-icon.svg" 
+              alt="Ed Fazli Logo" 
+              className="w-8 h-8"
+            />
+            <span className="text-2xl font-bold gradient-text hidden sm:block">
+              Ed Fazli
+            </span>
           </Link>
 
           {/* Desktop Navigation */}
