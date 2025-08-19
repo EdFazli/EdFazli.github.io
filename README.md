@@ -1,55 +1,60 @@
-# Ed Fazli's Technical Blog
+# Ed Fazli's Professional Blog
 
-A professional Jekyll-based technical blog hosted on GitHub Pages with custom domain support.
+A modern, high-performance blogging platform built with Next.js and deployed on GitHub Pages.
 
 ## 🚀 Features
 
-- **Modern Design**: Clean, responsive design with dark/light theme support
-- **SEO Optimized**: Built-in SEO tags, sitemap, and structured data
-- **Fast Performance**: Optimized CSS, lazy loading, and minimal JavaScript
-- **Blog Features**: Categories, tags, search, pagination, and table of contents
-- **Social Integration**: Share buttons, comments (Disqus), and social links
-- **GitHub Pages Ready**: Optimized for GitHub Pages deployment with default domain
+- **Modern Stack**: Built with Next.js 14, React 18, and TypeScript
+- **Responsive Design**: Mobile-first design with dark/light theme support
+- **SEO Optimized**: Built-in SEO, sitemap generation, and structured data
+- **Fast Performance**: Static site generation with optimal loading speeds
+- **Rich Content**: Markdown support with syntax highlighting and table of contents
+- **Interactive Components**: Search, filtering, and social sharing
+- **GitHub Pages Ready**: Automated deployment with GitHub Actions
 
 ## 🛠️ Tech Stack
 
-- **Jekyll**: Static site generator
-- **GitHub Pages**: Hosting platform
-- **Liquid**: Templating language
-- **Sass**: CSS preprocessing
-- **Font Awesome**: Icons
-- **Google Fonts**: Typography (Inter & JetBrains Mono)
+- **Framework**: Next.js 14 with App Router
+- **Language**: TypeScript
+- **Styling**: Tailwind CSS
+- **Content**: Markdown with gray-matter
+- **Icons**: Lucide React
+- **Deployment**: GitHub Pages with GitHub Actions
+- **Fonts**: Inter & JetBrains Mono (Google Fonts)
 
 ## 📁 Project Structure
 
-```md
-├── _config.yml          # Jekyll configuration
-├── _layouts/            # Page layouts
-│   ├── default.html     # Base layout
-│   └── post.html        # Blog post layout
-├── _includes/           # Reusable components
-│   ├── header.html      # Site header
-│   ├── footer.html      # Site footer
-│   └── toc.html         # Table of contents
-├── _posts/              # Blog posts
-├── _pages/              # Static pages
-│   ├── about.md         # About page
-│   ├── contact.md       # Contact page
-│   └── blog.html        # Blog listing
-├── assets/              # Static assets
-│   ├── css/             # Stylesheets
-│   ├── js/              # JavaScript files
-│   └── images/          # Images
-├── CNAME                # Custom domain configuration
-├── Gemfile              # Ruby dependencies
-└── index.html           # Homepage
+```
+├── app/                     # Next.js App Router
+│   ├── blog/               # Blog pages
+│   ├── about/              # About page
+│   ├── contact/            # Contact page
+│   ├── layout.tsx          # Root layout
+│   ├── page.tsx            # Homepage
+│   └── globals.css         # Global styles
+├── components/             # Reusable components
+│   ├── Header.tsx          # Navigation header
+│   ├── Footer.tsx          # Site footer
+│   ├── PostCard.tsx        # Blog post card
+│   ├── SearchBar.tsx       # Search functionality
+│   └── ThemeProvider.tsx   # Theme context
+├── content/                # Blog content
+│   └── posts/              # Markdown blog posts
+├── lib/                    # Utility functions
+│   ├── posts.ts            # Post management
+│   └── utils.ts            # Helper functions
+├── public/                 # Static assets
+├── .github/workflows/      # GitHub Actions
+├── next.config.js          # Next.js configuration
+├── tailwind.config.js      # Tailwind configuration
+└── package.json            # Dependencies
 ```
 
 ## 🚀 Quick Start
 
 ### Prerequisites
 
-- Ruby 2.7+ and Bundler
+- Node.js 18+ and npm
 - Git
 - GitHub account
 
@@ -62,204 +67,183 @@ A professional Jekyll-based technical blog hosted on GitHub Pages with custom do
    cd EdFazli.github.io
    ```
 
-2. **Install dependencies**
+2. **Install dependencies and setup**
 
    ```bash
-   bundle install
+   ./setup.sh
    ```
 
-3. **Run locally**
+3. **Start development server**
 
    ```bash
-   bundle exec jekyll serve
+   npm run dev
    ```
 
 4. **Open in browser**
 
-   ```md
-   http://localhost:4000
-   ```
+   Visit [http://localhost:3000](http://localhost:3000)
 
-### Customization
+### Building for Production
 
-1. **Update site configuration** in `_config.yml`:
-
-   ```yaml
-   title: "Your Blog Title"
-   email: your-email@example.com
-   description: "Your blog description"
-   url: "https://yourusername.github.io"
-   author:
-     name: "Your Name"
-     bio: "Your bio"
-   ```
-
-2. **Replace placeholder content**:
-   - Update author information in `_config.yml`
-   - Replace profile image in `assets/images/profile.jpg`
-   - Update social media links
-   - Customize the about page in `_pages/about.md`
-
-3. **Add your content**:
-   - Create blog posts in `_posts/` following the naming convention: `YYYY-MM-DD-title.md`
-   - Update static pages in `_pages/`
+```bash
+npm run build
+npm run export
+```
 
 ## 📝 Writing Posts
 
-Create new posts in the `_posts/` directory with the following front matter:
+Create new blog posts in the `content/posts/` directory using this format:
 
-```yaml
+```markdown
 ---
-layout: post
 title: "Your Post Title"
-date: 2024-01-15 10:00:00 -0000
-categories: [category1, category2]
-tags: [tag1, tag2, tag3]
+date: "2024-01-15"
 excerpt: "Brief description of your post"
+author: "Ed Fazli"
+categories: ["Development", "React"]
+tags: ["nextjs", "react", "tutorial"]
 toc: true
 comments: true
 share: true
 ---
 
-Your post content here...
+# Your Post Title
+
+Your content here...
 ```
 
 ### Post Features
 
-- **Table of Contents**: Set `toc: true` in front matter
-- **Reading Time**: Automatically calculated
+- **Markdown Support**: Full markdown syntax with code highlighting
+- **Table of Contents**: Automatic TOC generation
+- **Reading Time**: Calculated automatically
 - **Social Sharing**: Built-in share buttons
-- **Comments**: Disqus integration (configure in `_config.yml`)
-- **Code Highlighting**: Syntax highlighting with Rouge
-- **Image Optimization**: Responsive images with lazy loading
+- **Categories & Tags**: Organize and filter content
+- **SEO Optimization**: Automatic meta tags and structured data
 
 ## 🎨 Customization
 
-### Theme Colors
+### Site Configuration
 
-Update CSS variables in `assets/css/main.css`:
+Update site information in `app/layout.tsx`:
 
-```css
-:root {
-  --accent-primary: #3182ce;
-  --accent-secondary: #2b6cb0;
-  /* Add your custom colors */
+```typescript
+export const metadata = {
+  title: {
+    default: 'Your Name - Blog Title',
+    template: '%s | Your Name'
+  },
+  description: 'Your blog description',
+  // ... other metadata
 }
 ```
 
-### Typography
+### Theme Colors
 
-The site uses Inter for body text and JetBrains Mono for code. Update font imports in `_layouts/default.html`.
+Customize colors in `tailwind.config.js`:
 
-### Layout Modifications
+```javascript
+theme: {
+  extend: {
+    colors: {
+      primary: {
+        // Your custom color palette
+      }
+    }
+  }
+}
+```
 
-- **Header**: Edit `_includes/header.html`
-- **Footer**: Edit `_includes/footer.html`
-- **Homepage**: Edit `index.html`
-- **Post Layout**: Edit `_layouts/post.html`
+### Content Management
+
+- **Posts**: Add markdown files to `content/posts/`
+- **Images**: Place in `public/images/`
+- **Static Pages**: Modify files in `app/`
 
 ## 🌐 Deployment
 
-### GitHub Pages (Automatic)
+### Automatic Deployment (Recommended)
 
-1. **Push to GitHub**:
+The site automatically deploys to GitHub Pages when you push to the main branch:
 
+1. **Enable GitHub Pages**:
+   - Go to repository Settings → Pages
+   - Select "GitHub Actions" as source
+
+2. **Push your changes**:
    ```bash
    git add .
-   git commit -m "Initial commit"
+   git commit -m "Your commit message"
    git push origin main
    ```
 
-2. **Enable GitHub Pages**:
-   - Go to repository Settings
-   - Navigate to Pages section
-   - Select "Deploy from a branch"
-   - Choose "main" branch
-   - Save settings
-
 3. **Access your site**:
-   - Your site will be available at `https://edfazli.github.io`
-   - GitHub Pages will automatically build and deploy your site
+   Your site will be available at `https://yourusername.github.io`
 
 ### Manual Deployment
 
-Build the site locally and deploy to any static hosting:
-
 ```bash
-bundle exec jekyll build
-# Upload _site/ directory to your hosting provider
+npm run export
+# Upload the 'out' directory to your hosting provider
 ```
 
 ## 🔧 Configuration
 
+### Environment Variables
+
+Create a `.env.local` file for local development:
+
+```env
+NEXT_PUBLIC_SITE_URL=http://localhost:3000
+```
+
 ### Analytics
 
-Add Google Analytics in `_config.yml`:
+Add Google Analytics in `app/layout.tsx`:
 
-```yaml
-google_analytics: GA_TRACKING_ID
-```
-
-### Comments
-
-Configure Disqus in `_config.yml`:
-
-```yaml
-comments:
-  provider: "disqus"
-  disqus:
-    shortname: your-disqus-shortname
-```
-
-### Social Media
-
-Update social media links in `_config.yml`:
-
-```yaml
-twitter_username: your-twitter
-github_username: your-github
-linkedin_username: your-linkedin
+```typescript
+// Add your Google Analytics tracking code
 ```
 
 ### Contact Form
 
-The contact form uses Formspree. Update the form action in `_pages/contact.md`:
-
-```html
-<form action="https://formspree.io/f/your-form-id" method="POST">
-```
-
-## 📱 Responsive Design
-
-The site is fully responsive with breakpoints at:
-
-- Mobile: < 480px
-- Tablet: < 768px
-- Desktop: > 768px
+The contact form is ready for integration with services like:
+- Formspree
+- Netlify Forms
+- EmailJS
 
 ## ⚡ Performance
 
 - **Lighthouse Score**: 95+ on all metrics
-- **Optimized Images**: WebP format with fallbacks
-- **Minified Assets**: CSS and JavaScript minification
-- **Lazy Loading**: Images and non-critical resources
-- **CDN**: Font Awesome and Google Fonts via CDN
+- **Static Generation**: Pre-rendered at build time
+- **Image Optimization**: Next.js automatic optimization
+- **Code Splitting**: Automatic bundle optimization
+- **Font Optimization**: Google Fonts with display swap
 
 ## 🔍 SEO Features
 
-- **Meta Tags**: Comprehensive meta tags for social sharing
+- **Meta Tags**: Comprehensive meta tags for all pages
+- **Open Graph**: Social media sharing optimization
 - **Structured Data**: JSON-LD for better search results
-- **Sitemap**: Automatically generated XML sitemap
-- **RSS Feed**: Built-in RSS feed
-- **Canonical URLs**: Proper canonical URL structure
+- **Sitemap**: Automatically generated
+- **RSS Feed**: Built-in RSS feed support
+
+## 📱 Responsive Design
+
+Fully responsive with breakpoints:
+- Mobile: < 768px
+- Tablet: 768px - 1024px
+- Desktop: > 1024px
 
 ## 🤝 Contributing
 
 1. Fork the repository
-2. Create a feature branch
+2. Create a feature branch: `git checkout -b feature/new-feature`
 3. Make your changes
-4. Test locally
-5. Submit a pull request
+4. Test locally: `npm run dev`
+5. Commit changes: `git commit -m "Add new feature"`
+6. Push to branch: `git push origin feature/new-feature`
+7. Submit a pull request
 
 ## 📄 License
 
@@ -267,21 +251,21 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 🆘 Support
 
-If you encounter any issues or have questions:
+If you encounter issues:
 
-1. Check the [Jekyll documentation](https://jekyllrb.com/docs/)
+1. Check the [Next.js documentation](https://nextjs.org/docs)
 2. Review [GitHub Pages documentation](https://docs.github.com/en/pages)
 3. Open an issue in this repository
-4. Contact me via the contact form on the site
+4. Contact via the contact form
 
 ## 🙏 Acknowledgments
 
-- [Jekyll](https://jekyllrb.com/) - Static site generator
+- [Next.js](https://nextjs.org/) - React framework
+- [Tailwind CSS](https://tailwindcss.com/) - Utility-first CSS
+- [Lucide React](https://lucide.dev/) - Beautiful icons
 - [GitHub Pages](https://pages.github.com/) - Free hosting
-- [Font Awesome](https://fontawesome.com/) - Icons
-- [Google Fonts](https://fonts.google.com/) - Typography
-- [Disqus](https://disqus.com/) - Comments system
+- [Vercel](https://vercel.com/) - Next.js creators
 
 ---
 
-**Happy blogging!** 🎉
+**Built with ❤️ using Next.js and deployed on GitHub Pages**
