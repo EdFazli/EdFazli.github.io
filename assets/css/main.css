@@ -1,3 +1,7 @@
+/* Import enhanced page styles */
+@import url('blog.css');
+@import url('contact.css');
+
 /* Professional CSS Variables */
 :root {
   /* Light theme colors - Professional palette */

@@ -6,516 +6,225 @@ permalink: /blog/
 
 <div class="blog-page">
     <div class="container">
+        <!-- Enhanced Blog Header -->
         <div class="blog-header">
-            <h1>All Posts</h1>
-            <p>Explore my thoughts on software development, cloud computing, and technology trends.</p>
-        </div>
-
-        <div class="blog-filters">
-            <div class="filter-group">
-                <label for="category-filter">Filter by Category:</label>
-                <select id="category-filter">
-                    <option value="">All Categories</option>
-                    <option value="development">Development</option>
-                    <option value="cloud">Cloud</option>
-                    <option value="devops">DevOps</option>
-                    <option value="javascript">JavaScript</option>
-                    <option value="aws">AWS</option>
-                </select>
-            </div>
-            
-            <div class="search-group">
-                <label for="post-search">Search Posts:</label>
-                <input type="text" id="post-search" placeholder="Search by title or content...">
+            <div class="blog-header-content">
+                <h1 class="blog-title">Latest Articles</h1>
+                <p class="blog-description">Explore insights on software development, cloud computing, DevOps, and emerging technologies. Stay updated with the latest trends and best practices in the tech world.</p>
+                <div class="blog-stats">
+                    <div class="stat-item">
+                        <span class="stat-number">{{ site.posts.size }}</span>
+                        <span class="stat-label">Articles</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">{{ site.categories.size }}</span>
+                        <span class="stat-label">Categories</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">{{ site.tags.size }}</span>
+                        <span class="stat-label">Tags</span>
+                    </div>
+                </div>
             </div>
         </div>
 
-        <div class="posts-container">
-            <div class="posts-grid" id="posts-grid">
-                {% for post in site.posts %}
-                    <article class="post-card" data-categories="{{ post.categories | join: ' ' }}" data-tags="{{ post.tags | join: ' ' }}">
-                        <div class="post-meta">
-                            <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%B %d, %Y" }}</time>
-                            {% if post.categories.size > 0 %}
-                                <span class="post-category">{{ post.categories | first | capitalize }}</span>
-                            {% endif %}
-                        </div>
-                        
-                        <h2 class="post-title">
-                            <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
-                        </h2>
-                        
-                        <p class="post-excerpt">{{ post.excerpt | strip_html | truncatewords: 30 }}</p>
-                        
-                        {% if post.tags.size > 0 %}
-                            <div class="post-tags">
-                                {% for tag in post.tags limit:4 %}
-                                    <span class="tag">{{ tag }}</span>
-                                {% endfor %}
+        <!-- Enhanced Filters Section -->
+        <div class="blog-controls">
+            <div class="filters-section">
+                <div class="filter-group">
+                    <label for="category-filter">
+                        <i class="fas fa-folder-open"></i>
+                        Filter by Category
+                    </label>
+                    <select id="category-filter" class="filter-select">
+                        <option value="">All Categories</option>
+                        {% assign categories = site.categories | sort %}
+                        {% for category in categories %}
+                            <option value="{{ category[0] }}">{{ category[0] | capitalize }} ({{ category[1] | size }})</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                
+                <div class="search-group">
+                    <label for="post-search">
+                        <i class="fas fa-search"></i>
+                        Search Articles
+                    </label>
+                    <input type="text" id="post-search" class="search-input" placeholder="Search by title, content, or tags...">
+                </div>
+                
+                <div class="sort-group">
+                    <label for="sort-select">
+                        <i class="fas fa-sort"></i>
+                        Sort by
+                    </label>
+                    <select id="sort-select" class="sort-select">
+                        <option value="date-desc">Newest First</option>
+                        <option value="date-asc">Oldest First</option>
+                        <option value="title-asc">Title A-Z</option>
+                        <option value="title-desc">Title Z-A</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Content Area -->
+        <div class="blog-content">
+            <!-- Posts Section -->
+            <main class="posts-section">
+                <div class="posts-header">
+                    <h2 class="posts-count">
+                        <span id="visible-count">{{ site.posts.size }}</span> 
+                        <span class="posts-label">articles found</span>
+                    </h2>
+                    <div class="view-toggle">
+                        <button class="view-btn active" data-view="list">
+                            <i class="fas fa-list"></i>
+                            List
+                        </button>
+                        <button class="view-btn" data-view="grid">
+                            <i class="fas fa-th"></i>
+                            Grid
+                        </button>
+                    </div>
+                </div>
+
+                <div class="posts-container list-view" id="posts-container">
+                    {% for post in site.posts %}
+                        <article class="post-card" data-categories="{{ post.categories | join: ' ' }}" data-tags="{{ post.tags | join: ' ' }}" data-title="{{ post.title }}" data-date="{{ post.date | date: '%Y-%m-%d' }}">
+                            <div class="post-card-content">
+                                <div class="post-meta">
+                                    <time class="post-date" datetime="{{ post.date | date_to_xmlschema }}">
+                                        <i class="fas fa-calendar-alt"></i>
+                                        {{ post.date | date: "%B %d, %Y" }}
+                                    </time>
+                                    {% if post.categories.size > 0 %}
+                                        <span class="post-category">
+                                            <i class="fas fa-folder"></i>
+                                            {{ post.categories | first | capitalize }}
+                                        </span>
+                                    {% endif %}
+                                    <span class="read-time">
+                                        <i class="fas fa-clock"></i>
+                                        {{ post.content | number_of_words | divided_by: 200 | append: ' min read' }}
+                                    </span>
+                                </div>
+                                
+                                <h2 class="post-title">
+                                    <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+                                </h2>
+                                
+                                <p class="post-excerpt">{{ post.excerpt | strip_html | truncatewords: 35 }}</p>
+                                
+                                {% if post.tags.size > 0 %}
+                                    <div class="post-tags">
+                                        {% for tag in post.tags limit:5 %}
+                                            <span class="tag">{{ tag }}</span>
+                                        {% endfor %}
+                                        {% if post.tags.size > 5 %}
+                                            <span class="tag-more">+{{ post.tags.size | minus: 5 }} more</span>
+                                        {% endif %}
+                                    </div>
+                                {% endif %}
+                                
+                                <div class="post-footer">
+                                    <a href="{{ post.url | relative_url }}" class="read-more-btn">
+                                        <span>Read Full Article</span>
+                                        <i class="fas fa-arrow-right"></i>
+                                    </a>
+                                </div>
                             </div>
-                        {% endif %}
-                        
-                        <div class="post-footer">
-                            <a href="{{ post.url | relative_url }}" class="read-more">Read More →</a>
-                            <div class="post-stats">
-                                <span class="read-time">
-                                    <i class="fas fa-clock"></i>
-                                    {{ post.content | number_of_words | divided_by: 200 | append: ' min read' }}
-                                </span>
-                            </div>
-                        </div>
-                    </article>
-                {% endfor %}
-            </div>
-            
-            <div class="no-posts" id="no-posts" style="display: none;">
-                <div class="no-posts-content">
-                    <i class="fas fa-search"></i>
-                    <h3>No posts found</h3>
-                    <p>Try adjusting your search criteria or browse all posts.</p>
+                        </article>
+                    {% endfor %}
                 </div>
-            </div>
-        </div>
+                
+                <!-- No Results Message -->
+                <div class="no-results" id="no-results" style="display: none;">
+                    <div class="no-results-content">
+                        <i class="fas fa-search-minus"></i>
+                        <h3>No articles found</h3>
+                        <p>Try adjusting your search criteria or browse all articles.</p>
+                        <button class="clear-filters-btn" onclick="clearAllFilters()">
+                            <i class="fas fa-times"></i>
+                            Clear All Filters
+                        </button>
+                    </div>
+                </div>
+            </main>
 
-        <div class="blog-sidebar">
-            <div class="sidebar-section">
-                <h3>Categories</h3>
-                <div class="category-list">
-                    {% assign categories = site.categories | sort %}
-                    {% for category in categories %}
-                        <a href="#" class="category-link" data-category="{{ category[0] }}">
-                            <span class="category-name">{{ category[0] | capitalize }}</span>
-                            <span class="category-count">{{ category[1] | size }}</span>
-                        </a>
-                    {% endfor %}
+            <!-- Enhanced Sidebar -->
+            <aside class="blog-sidebar">
+                <div class="sidebar-section featured-categories">
+                    <h3>
+                        <i class="fas fa-star"></i>
+                        Popular Categories
+                    </h3>
+                    <div class="category-grid">
+                        {% assign sorted_categories = site.categories | sort: 'size' | reverse %}
+                        {% for category in sorted_categories limit:6 %}
+                            <a href="#" class="category-card" data-category="{{ category[0] }}">
+                                <div class="category-info">
+                                    <h4>{{ category[0] | capitalize }}</h4>
+                                    <span class="category-count">{{ category[1] | size }} articles</span>
+                                </div>
+                                <i class="fas fa-arrow-right"></i>
+                            </a>
+                        {% endfor %}
+                    </div>
                 </div>
-            </div>
-            
-            <div class="sidebar-section">
-                <h3>Popular Tags</h3>
-                <div class="tag-cloud">
-                    {% assign tags = site.tags | sort %}
-                    {% for tag in tags limit:20 %}
-                        <a href="#" class="tag-link" data-tag="{{ tag[0] }}">{{ tag[0] }}</a>
-                    {% endfor %}
+                
+                <div class="sidebar-section recent-posts">
+                    <h3>
+                        <i class="fas fa-clock"></i>
+                        Recent Posts
+                    </h3>
+                    <div class="recent-posts-list">
+                        {% for post in site.posts limit:5 %}
+                            <div class="recent-post-item">
+                                <div class="recent-post-content">
+                                    <h4><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h4>
+                                    <div class="recent-post-meta">
+                                        <time>{{ post.date | date: "%b %d, %Y" }}</time>
+                                        {% if post.categories.size > 0 %}
+                                            <span class="recent-category">{{ post.categories | first | capitalize }}</span>
+                                        {% endif %}
+                                    </div>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </div>
                 </div>
-            </div>
-            
-            <div class="sidebar-section">
-                <h3>Recent Posts</h3>
-                <div class="recent-posts">
-                    {% for post in site.posts limit:5 %}
-                        <div class="recent-post">
-                            <h4><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h4>
-                            <time>{{ post.date | date: "%b %d, %Y" }}</time>
-                        </div>
-                    {% endfor %}
+                
+                <div class="sidebar-section tag-cloud-section">
+                    <h3>
+                        <i class="fas fa-tags"></i>
+                        Popular Tags
+                    </h3>
+                    <div class="tag-cloud">
+                        {% assign sorted_tags = site.tags | sort: 'size' | reverse %}
+                        {% for tag in sorted_tags limit:20 %}
+                            <a href="#" class="tag-cloud-item" data-tag="{{ tag[0] }}" style="font-size: {{ tag[1] | size | times: 0.8 | plus: 0.8 }}em;">
+                                {{ tag[0] }}
+                            </a>
+                        {% endfor %}
+                    </div>
                 </div>
-            </div>
-            
-            <div class="sidebar-section">
-                <h3>Archive</h3>
-                <div class="archive-list">
-                    {% assign posts_by_year = site.posts | group_by_exp: "post", "post.date | date: '%Y'" %}
-                    {% for year in posts_by_year %}
-                        <div class="archive-year">
-                            <h4>{{ year.name }}</h4>
-                            <span class="archive-count">{{ year.items | size }} posts</span>
-                        </div>
-                    {% endfor %}
+                
+                <div class="sidebar-section newsletter-signup">
+                    <h3>
+                        <i class="fas fa-envelope"></i>
+                        Stay Updated
+                    </h3>
+                    <p>Get notified when I publish new articles</p>
+                    <form class="newsletter-form" action="#" method="POST">
+                        <input type="email" placeholder="Enter your email" required>
+                        <button type="submit">
+                            <i class="fas fa-paper-plane"></i>
+                            Subscribe
+                        </button>
+                    </form>
                 </div>
-            </div>
+            </aside>
         </div>
     </div>
 </div>
-
-<style>
-.blog-page {
-    padding: var(--spacing-3xl) 0;
-}
-
-.blog-header {
-    text-align: center;
-    margin-bottom: var(--spacing-3xl);
-}
-
-.blog-header h1 {
-    color: var(--accent-primary);
-    margin-bottom: var(--spacing-md);
-}
-
-.blog-header p {
-    font-size: var(--font-size-lg);
-    color: var(--text-secondary);
-    max-width: 600px;
-    margin: 0 auto;
-}
-
-.blog-filters {
-    display: flex;
-    gap: var(--spacing-xl);
-    margin-bottom: var(--spacing-2xl);
-    padding: var(--spacing-lg);
-    background-color: var(--bg-secondary);
-    border-radius: var(--radius-md);
-    border: 1px solid var(--border-color);
-}
-
-.filter-group, .search-group {
-    display: flex;
-    flex-direction: column;
-    gap: var(--spacing-sm);
-    flex: 1;
-}
-
-.filter-group label, .search-group label {
-    font-weight: 500;
-    color: var(--text-primary);
-    font-size: var(--font-size-sm);
-}
-
-.filter-group select, .search-group input {
-    padding: var(--spacing-sm) var(--spacing-md);
-    border: 1px solid var(--border-color);
-    border-radius: var(--radius-sm);
-    background-color: var(--bg-primary);
-    color: var(--text-primary);
-}
-
-.posts-container {
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    gap: var(--spacing-3xl);
-}
-
-.posts-grid {
-    display: flex;
-    flex-direction: column;
-    gap: var(--spacing-xl);
-}
-
-.post-card {
-    background-color: var(--bg-secondary);
-    border-radius: var(--radius-lg);
-    padding: var(--spacing-xl);
-    box-shadow: var(--shadow-sm);
-    transition: all 0.3s ease;
-    border: 1px solid var(--border-color);
-}
-
-.post-card:hover {
-    transform: translateY(-4px);
-    box-shadow: var(--shadow-lg);
-}
-
-.post-meta {
-    display: flex;
-    align-items: center;
-    gap: var(--spacing-md);
-    margin-bottom: var(--spacing-md);
-    font-size: var(--font-size-sm);
-    color: var(--text-muted);
-}
-
-.post-category {
-    background-color: var(--accent-primary);
-    color: white;
-    padding: var(--spacing-xs) var(--spacing-sm);
-    border-radius: var(--radius-sm);
-    font-size: var(--font-size-xs);
-    font-weight: 500;
-}
-
-.post-title {
-    margin-bottom: var(--spacing-md);
-}
-
-.post-title a {
-    color: var(--text-primary);
-    text-decoration: none;
-}
-
-.post-title a:hover {
-    color: var(--accent-primary);
-}
-
-.post-excerpt {
-    color: var(--text-secondary);
-    margin-bottom: var(--spacing-md);
-    line-height: 1.6;
-}
-
-.post-tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: var(--spacing-sm);
-    margin-bottom: var(--spacing-lg);
-}
-
-.tag {
-    background-color: var(--bg-tertiary);
-    color: var(--text-secondary);
-    padding: var(--spacing-xs) var(--spacing-sm);
-    border-radius: var(--radius-sm);
-    font-size: var(--font-size-xs);
-}
-
-.post-footer {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.read-more {
-    color: var(--accent-primary);
-    font-weight: 500;
-    text-decoration: none;
-}
-
-.read-more:hover {
-    color: var(--accent-secondary);
-}
-
-.post-stats {
-    display: flex;
-    align-items: center;
-    gap: var(--spacing-sm);
-    color: var(--text-muted);
-    font-size: var(--font-size-sm);
-}
-
-.blog-sidebar {
-    display: flex;
-    flex-direction: column;
-    gap: var(--spacing-2xl);
-}
-
-.sidebar-section {
-    background-color: var(--bg-secondary);
-    padding: var(--spacing-lg);
-    border-radius: var(--radius-md);
-    border: 1px solid var(--border-color);
-}
-
-.sidebar-section h3 {
-    color: var(--accent-primary);
-    margin-bottom: var(--spacing-md);
-    font-size: var(--font-size-lg);
-}
-
-.category-list {
-    display: flex;
-    flex-direction: column;
-    gap: var(--spacing-sm);
-}
-
-.category-link {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: var(--spacing-sm);
-    color: var(--text-secondary);
-    text-decoration: none;
-    border-radius: var(--radius-sm);
-    transition: all 0.2s ease;
-}
-
-.category-link:hover {
-    background-color: var(--bg-primary);
-    color: var(--accent-primary);
-}
-
-.category-count {
-    background-color: var(--bg-tertiary);
-    color: var(--text-muted);
-    padding: var(--spacing-xs) var(--spacing-sm);
-    border-radius: var(--radius-sm);
-    font-size: var(--font-size-xs);
-}
-
-.tag-cloud {
-    display: flex;
-    flex-wrap: wrap;
-    gap: var(--spacing-sm);
-}
-
-.tag-link {
-    background-color: var(--bg-primary);
-    color: var(--text-secondary);
-    padding: var(--spacing-xs) var(--spacing-sm);
-    border-radius: var(--radius-sm);
-    text-decoration: none;
-    font-size: var(--font-size-sm);
-    border: 1px solid var(--border-color);
-    transition: all 0.2s ease;
-}
-
-.tag-link:hover {
-    background-color: var(--accent-primary);
-    color: white;
-}
-
-.recent-posts {
-    display: flex;
-    flex-direction: column;
-    gap: var(--spacing-md);
-}
-
-.recent-post {
-    padding-bottom: var(--spacing-md);
-    border-bottom: 1px solid var(--border-color);
-}
-
-.recent-post:last-child {
-    border-bottom: none;
-    padding-bottom: 0;
-}
-
-.recent-post h4 {
-    margin-bottom: var(--spacing-xs);
-    font-size: var(--font-size-sm);
-}
-
-.recent-post h4 a {
-    color: var(--text-primary);
-    text-decoration: none;
-}
-
-.recent-post h4 a:hover {
-    color: var(--accent-primary);
-}
-
-.recent-post time {
-    color: var(--text-muted);
-    font-size: var(--font-size-xs);
-}
-
-.archive-list {
-    display: flex;
-    flex-direction: column;
-    gap: var(--spacing-sm);
-}
-
-.archive-year {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: var(--spacing-sm);
-    border-radius: var(--radius-sm);
-    transition: background-color 0.2s ease;
-}
-
-.archive-year:hover {
-    background-color: var(--bg-primary);
-}
-
-.archive-year h4 {
-    margin: 0;
-    color: var(--text-primary);
-    font-size: var(--font-size-base);
-}
-
-.archive-count {
-    color: var(--text-muted);
-    font-size: var(--font-size-sm);
-}
-
-.no-posts {
-    text-align: center;
-    padding: var(--spacing-3xl);
-    color: var(--text-muted);
-}
-
-.no-posts-content i {
-    font-size: var(--font-size-4xl);
-    margin-bottom: var(--spacing-lg);
-    color: var(--text-muted);
-}
-
-.no-posts-content h3 {
-    margin-bottom: var(--spacing-md);
-    color: var(--text-secondary);
-}
-
-@media (max-width: 768px) {
-    .blog-filters {
-        flex-direction: column;
-        gap: var(--spacing-md);
-    }
-    
-    .posts-container {
-        grid-template-columns: 1fr;
-        gap: var(--spacing-2xl);
-    }
-    
-    .post-footer {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: var(--spacing-sm);
-    }
-}
-</style>
-
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-    const categoryFilter = document.getElementById('category-filter');
-    const searchInput = document.getElementById('post-search');
-    const postsGrid = document.getElementById('posts-grid');
-    const noPosts = document.getElementById('no-posts');
-    const postCards = document.querySelectorAll('.post-card');
-    
-    function filterPosts() {
-        const selectedCategory = categoryFilter.value.toLowerCase();
-        const searchTerm = searchInput.value.toLowerCase();
-        let visiblePosts = 0;
-        
-        postCards.forEach(card => {
-            const categories = card.dataset.categories.toLowerCase();
-            const tags = card.dataset.tags.toLowerCase();
-            const title = card.querySelector('.post-title a').textContent.toLowerCase();
-            const excerpt = card.querySelector('.post-excerpt').textContent.toLowerCase();
-            
-            const matchesCategory = !selectedCategory || categories.includes(selectedCategory);
-            const matchesSearch = !searchTerm || 
-                title.includes(searchTerm) || 
-                excerpt.includes(searchTerm) || 
-                tags.includes(searchTerm);
-            
-            if (matchesCategory && matchesSearch) {
-                card.style.display = 'block';
-                visiblePosts++;
-            } else {
-                card.style.display = 'none';
-            }
-        });
-        
-        if (visiblePosts === 0) {
-            noPosts.style.display = 'block';
-        } else {
-            noPosts.style.display = 'none';
-        }
-    }
-    
-    categoryFilter.addEventListener('change', filterPosts);
-    searchInput.addEventListener('input', filterPosts);
-    
-    // Category and tag link functionality
-    document.querySelectorAll('.category-link').forEach(link => {
-        link.addEventListener('click', function(e) {
-            e.preventDefault();
-            const category = this.dataset.category;
-            categoryFilter.value = category;
-            filterPosts();
-        });
-    });
-    
-    document.querySelectorAll('.tag-link').forEach(link => {
-        link.addEventListener('click', function(e) {
-            e.preventDefault();
-            const tag = this.dataset.tag;
-            searchInput.value = tag;
-            filterPosts();
-        });
-    });
-});
-</script>

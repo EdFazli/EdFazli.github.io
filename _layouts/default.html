@@ -44,6 +44,12 @@
     
     <!-- Scripts -->
     <script src="{{ '/assets/js/main.js' | relative_url }}"></script>
+    {% if page.url == '/blog/' %}
+    <script src="{{ '/assets/js/blog.js' | relative_url }}"></script>
+    {% endif %}
+    {% if page.url == '/contact/' %}
+    <script src="{{ '/assets/js/contact.js' | relative_url }}"></script>
+    {% endif %}
     
     <!-- Theme Toggle -->
     <script>
