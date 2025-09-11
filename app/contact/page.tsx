@@ -2,7 +2,7 @@ import { Mail, MapPin, Clock, Send } from 'lucide-react'
 
 export const metadata = {
   title: 'Contact',
-  description: 'Get in touch with Ed Fazli for collaborations, questions, or just to say hello.',
+  description: 'Get in touch with Syed Fazli for collaborations, questions, or just to say hello.',
 }
 
 export default function ContactPage() {
@@ -109,7 +109,7 @@ export default function ContactPage() {
                 </div>
                 <div>
                   <h3 className="font-medium">Email</h3>
-                  <p className="text-gray-600 dark:text-gray-300">ed@example.com</p>
+                  <p className="text-gray-600 dark:text-gray-300">edfazli92@gmail.com</p>
                 </div>
               </div>
               
@@ -119,7 +119,7 @@ export default function ContactPage() {
                 </div>
                 <div>
                   <h3 className="font-medium">Location</h3>
-                  <p className="text-gray-600 dark:text-gray-300">San Francisco, CA</p>
+                  <p className="text-gray-600 dark:text-gray-300">Shah Alam, Selangor</p>
                 </div>
               </div>
               
@@ -151,9 +151,9 @@ export default function ContactPage() {
             <h3 className="text-lg font-semibold mb-4">Preferred Topics</h3>
             <div className="flex flex-wrap gap-2">
               {[
-                'React & Next.js',
-                'TypeScript',
-                'Node.js',
+                'AWS',
+                'Platform Engineering',
+                'Golang',
                 'Cloud Architecture',
                 'DevOps',
                 'Performance',
@@ -179,7 +179,7 @@ export default function ContactPage() {
           <div>
             <h3 className="text-lg font-semibold mb-2">How quickly do you respond to emails?</h3>
             <p className="text-gray-600 dark:text-gray-300">
-              I typically respond within 24 hours during weekdays. For urgent matters, 
+              I typically respond within 48 hours during weekdays. For urgent matters, 
               please mention it in the subject line.
             </p>
           </div>

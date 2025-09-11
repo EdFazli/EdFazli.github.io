@@ -14,7 +14,7 @@ export default function Home() {
           Hi, I'm <span className="gradient-text">Ed Fazli</span>
         </h1>
         <p className="text-xl md:text-2xl text-gray-600 dark:text-gray-300 mb-8 max-w-3xl mx-auto">
-          Software engineer passionate about building scalable solutions, 
+          Cloud enthusiast passionate about building scalable solutions, 
           cloud architecture, and sharing knowledge through technical writing.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">

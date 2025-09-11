@@ -16,13 +16,13 @@ const jetbrainsMono = JetBrains_Mono({
 
 export const metadata = {
   title: {
-    default: 'Ed Fazli - Technical Blog',
-    template: '%s | Ed Fazli'
+    default: 'Syed Fazli - Technical Blog',
+    template: '%s | Syed Fazli'
   },
   description: 'Professional technical blog covering software development, cloud computing, and technology insights.',
   keywords: ['blog', 'technology', 'software development', 'cloud computing', 'programming'],
-  authors: [{ name: 'Ed Fazli' }],
-  creator: 'Ed Fazli',
+  authors: [{ name: 'Syed Fazli' }],
+  creator: 'Syed Fazli',
   icons: {
     icon: '/images/favicon.svg',
     shortcut: '/images/favicon.svg',
@@ -32,21 +32,21 @@ export const metadata = {
     type: 'website',
     locale: 'en_US',
     url: 'https://edfazli.github.io',
-    title: 'Ed Fazli - Technical Blog',
+    title: 'Syed Fazli - Technical Blog',
     description: 'Professional technical blog covering software development, cloud computing, and technology insights.',
-    siteName: 'Ed Fazli Blog',
+    siteName: 'Sued Fazli Blog',
     images: [
       {
         url: '/images/logo.svg',
         width: 200,
         height: 60,
-        alt: 'Ed Fazli Technical Blog Logo',
+        alt: 'Syed Fazli Technical Blog Logo',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Ed Fazli - Technical Blog',
+    title: 'Syed Fazli - Technical Blog',
     description: 'Professional technical blog covering software development, cloud computing, and technology insights.',
     creator: '@edfazli',
     images: ['/images/logo.svg'],

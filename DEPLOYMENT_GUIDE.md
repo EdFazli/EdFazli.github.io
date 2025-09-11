@@ -21,12 +21,14 @@ The original error was caused by missing `package-lock.json` file. This has been
 
 ### 2. Deploy Your Site
 
-**Option A: Using the deployment script (Recommended)**
+#### **Option A: Using the deployment script (Recommended)**
+
 ```bash
 ./deploy.sh "Your commit message"
 ```
 
-**Option B: Manual deployment**
+#### **Option B: Manual deployment**
+
 ```bash
 # Test build locally first
 npm run build
@@ -48,7 +50,9 @@ git push origin main
 ## 🔧 Configuration Details
 
 ### GitHub Actions Workflow
+
 The workflow (`.github/workflows/deploy.yml`) automatically:
+
 - ✅ Installs Node.js 18
 - ✅ Installs dependencies with `npm ci`
 - ✅ Builds the Next.js app
@@ -57,7 +61,9 @@ The workflow (`.github/workflows/deploy.yml`) automatically:
 - ✅ Deploys to `gh-pages` branch
 
 ### Next.js Configuration
+
 The `next.config.js` is configured for:
+
 - ✅ Static export (`output: 'export'`)
 - ✅ Trailing slashes for GitHub Pages
 - ✅ Unoptimized images (required for static export)
@@ -67,7 +73,8 @@ The `next.config.js` is configured for:
 
 ### Common Issues and Solutions
 
-**1. Build Fails with TypeScript Errors**
+#### **1. Build Fails with TypeScript Errors**
+
 ```bash
 # Run locally to see errors
 npm run build
@@ -77,16 +84,19 @@ npm run build
 ```
 
 **2. 404 Errors on Deployed Site**
+
 - Check that GitHub Pages is enabled
 - Verify the source is set to "GitHub Actions"
 - Wait a few minutes for DNS propagation
 
 **3. CSS/JS Not Loading**
+
 - Ensure `next.config.js` has correct configuration
 - Check browser console for 404 errors
 - Verify the `out/` directory contains all assets
 
 **4. Deployment Workflow Fails**
+
 - Check the Actions tab for error details
 - Ensure `package-lock.json` is committed
 - Verify Node.js version compatibility
@@ -119,6 +129,7 @@ After pushing to main branch:
 ## 🎯 Quick Reference
 
 ### Essential Commands
+
 ```bash
 # Local development
 npm run dev
@@ -134,6 +145,7 @@ git add . && git commit -m "Update" && git push origin main
 ```
 
 ### Important Files
+
 - `package-lock.json` - Dependency lock file (must be committed)
 - `.github/workflows/deploy.yml` - GitHub Actions workflow
 - `next.config.js` - Next.js configuration for static export
@@ -142,6 +154,7 @@ git add . && git commit -m "Update" && git push origin main
 ## ✅ Verification Checklist
 
 Before deploying, ensure:
+
 - [ ] `npm run build` works locally
 - [ ] `package-lock.json` exists and is committed
 - [ ] GitHub Pages is enabled with "GitHub Actions" source

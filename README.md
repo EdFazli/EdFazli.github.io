@@ -1,4 +1,4 @@
-# Ed Fazli's Professional Blog
+# Syed Fazli's Professional Blog
 
 A modern, high-performance blogging platform built with Next.js and deployed on GitHub Pages.
 
@@ -24,7 +24,7 @@ A modern, high-performance blogging platform built with Next.js and deployed on 
 
 ## 📁 Project Structure
 
-```
+```sh
 ├── app/                     # Next.js App Router
 │   ├── blog/               # Blog pages
 │   ├── about/              # About page
@@ -171,6 +171,7 @@ The site automatically deploys to GitHub Pages when you push to the main branch:
    - Select "GitHub Actions" as source
 
 2. **Push your changes**:
+
    ```bash
    git add .
    git commit -m "Your commit message"
@@ -208,6 +209,7 @@ Add Google Analytics in `app/layout.tsx`:
 ### Contact Form
 
 The contact form is ready for integration with services like:
+
 - Formspree
 - Netlify Forms
 - EmailJS
@@ -231,6 +233,7 @@ The contact form is ready for integration with services like:
 ## 📱 Responsive Design
 
 Fully responsive with breakpoints:
+
 - Mobile: < 768px
 - Tablet: 768px - 1024px
 - Desktop: > 1024px
@@ -268,4 +271,4 @@ If you encounter issues:
 
 ---
 
-**Built with ❤️ using Next.js and deployed on GitHub Pages**
+## **Built with ❤️ using Next.js and deployed on GitHub Pages**
