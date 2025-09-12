@@ -34,7 +34,7 @@ export const metadata = {
     url: 'https://edfazli.github.io',
     title: 'Syed Fazli - Technical Blog',
     description: 'Professional technical blog covering software development, cloud computing, and technology insights.',
-    siteName: 'Sued Fazli Blog',
+    siteName: 'Syed Fazli Blog',
     images: [
       {
         url: '/images/logo.svg',

@@ -11,7 +11,7 @@ export default function Home() {
       {/* Hero Section */}
       <section className="text-center py-16">
         <h1 className="text-5xl md:text-6xl font-bold mb-6">
-          Hi, I'm <span className="gradient-text">Ed Fazli</span>
+          Hi, I'm <span className="gradient-text">Syed Fazli</span>
         </h1>
         <p className="text-xl md:text-2xl text-gray-600 dark:text-gray-300 mb-8 max-w-3xl mx-auto">
           Cloud enthusiast passionate about building scalable solutions, 
