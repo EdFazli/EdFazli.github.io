@@ -99,7 +99,7 @@ Create new blog posts in the `content/posts/` directory using this format:
 title: "Your Post Title"
 date: "2024-01-15"
 excerpt: "Brief description of your post"
-author: "Ed Fazli"
+author: "Syed Fazli"
 categories: ["Development", "React"]
 tags: ["nextjs", "react", "tutorial"]
 toc: true
