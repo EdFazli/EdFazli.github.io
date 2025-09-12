@@ -28,7 +28,7 @@ export default function Header() {
               className="w-8 h-8"
             />
             <span className="text-2xl font-bold gradient-text hidden sm:block">
-              Ed Fazli
+              Syed Fazli
             </span>
           </Link>
 

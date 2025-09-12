@@ -17,11 +17,11 @@ export default function Footer() {
                 className="w-8 h-8"
               />
               <span className="text-2xl font-bold gradient-text">
-                Ed Fazli
+                Syed Fazli
               </span>
             </Link>
             <p className="text-gray-600 dark:text-gray-300 mb-4 max-w-md">
-              Software engineer passionate about building scalable solutions and sharing 
+              Cloud enthusiast passionate about building scalable solutions and sharing 
               knowledge through technical writing.
             </p>
             <div className="flex space-x-4">
@@ -35,7 +35,7 @@ export default function Footer() {
                 <Github size={20} />
               </a>
               <a
-                href="https://linkedin.com/in/edfazli"
+                href="https://linkedin.com/in/syed-fazli-019539100"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
@@ -44,7 +44,7 @@ export default function Footer() {
                 <Linkedin size={20} />
               </a>
               <a
-                href="mailto:ed@example.com"
+                href="mailto:edfazli92@gmail.com"
                 className="text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
                 aria-label="Email"
               >
@@ -93,7 +93,7 @@ export default function Footer() {
             <ul className="space-y-2">
               <li>
                 <Link href="/blog?category=development" className="text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
-                  Development
+                  DevOps
                 </Link>
               </li>
               <li>
@@ -117,7 +117,7 @@ export default function Footer() {
 
         <div className="border-t border-gray-200 dark:border-gray-700 mt-8 pt-8 text-center">
           <p className="text-gray-600 dark:text-gray-300">
-            © {currentYear} Ed Fazli. All rights reserved. Built with Next.js and deployed on GitHub Pages.
+            © {currentYear} Syed Fazli. All rights reserved. Built with Next.js and deployed on GitHub Pages.
           </p>
         </div>
       </div>
