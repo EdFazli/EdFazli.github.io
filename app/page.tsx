@@ -96,7 +96,7 @@ export default function Home() {
       <section className="card text-center">
         <h2 className="text-2xl font-bold mb-4">Stay Updated</h2>
         <p className="text-gray-600 dark:text-gray-300 mb-6 max-w-2xl mx-auto">
-          Get notified when I publish new articles about software development, 
+          Get notified when I publish new articles about devops, 
           cloud computing, and technology insights.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
