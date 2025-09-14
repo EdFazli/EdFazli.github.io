@@ -6,7 +6,7 @@ import { BookOpen } from 'lucide-react'
 
 export const metadata = {
   title: 'Blog',
-  description: 'Technical articles about software development, cloud computing, and technology insights.',
+  description: 'Technical articles about devops, cloud computing, and technology insights.',
 }
 
 export default function BlogPage() {
@@ -19,7 +19,7 @@ export default function BlogPage() {
       <div className="text-center">
         <h1 className="text-4xl font-bold mb-4">Blog</h1>
         <p className="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-          Technical insights, tutorials, and thoughts on software development and technology.
+          Technical insights, tutorials, and thoughts on devops and technology.
         </p>
       </div>
 

@@ -37,7 +37,7 @@ export default function Home() {
           </div>
           <h3 className="text-xl font-semibold mb-2">Technical Insights</h3>
           <p className="text-gray-600 dark:text-gray-300">
-            Deep dives into software development, architecture patterns, and best practices.
+            Deep dives into devops, architecture patterns, and best practices.
           </p>
         </div>
         

@@ -33,7 +33,7 @@ export default function AboutPage() {
         <h2 className="text-2xl font-bold mb-6">My Story</h2>
         <div className="prose-custom">
           <p>
-            Hi! I'm Ed Fazli, a cloud consultant with over 5 years of experience building 
+            Hi! I'm Syed Fazli, a cloud consultant with over 5 years of experience building 
             scalable web applications and distributed systems. I'm passionate about AWS, 
             system architecture, platform engineering and helping other engineers grow in their careers.
           </p>

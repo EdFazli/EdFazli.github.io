@@ -19,7 +19,7 @@ export const metadata = {
     default: 'Syed Fazli - Technical Blog',
     template: '%s | Syed Fazli'
   },
-  description: 'Professional technical blog covering software development, cloud computing, and technology insights.',
+  description: 'Professional technical blog covering devops, cloud computing, and technology insights.',
   keywords: ['blog', 'technology', 'software development', 'cloud computing', 'programming'],
   authors: [{ name: 'Syed Fazli' }],
   creator: 'Syed Fazli',
@@ -33,7 +33,7 @@ export const metadata = {
     locale: 'en_US',
     url: 'https://edfazli.github.io',
     title: 'Syed Fazli - Technical Blog',
-    description: 'Professional technical blog covering software development, cloud computing, and technology insights.',
+    description: 'Professional technical blog covering devops, cloud computing, and technology insights.',
     siteName: 'Syed Fazli Blog',
     images: [
       {
@@ -47,7 +47,7 @@ export const metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Syed Fazli - Technical Blog',
-    description: 'Professional technical blog covering software development, cloud computing, and technology insights.',
+    description: 'Professional technical blog covering devops, cloud computing, and technology insights.',
     creator: '@edfazli',
     images: ['/images/logo.svg'],
   },
