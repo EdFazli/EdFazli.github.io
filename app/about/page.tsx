@@ -96,6 +96,17 @@ export default function AboutPage() {
               ))}
             </div>
           </div>
+
+          <div>
+            <h3 className="text-lg font-semibold mb-4">Certifications</h3>
+            <div className="flex flex-wrap gap-2">
+              {['Certified Kubernetes Administrator (CKA)', 'AWS Certified Developer - Associate', 'AWS Certified SysOps Administrator - Associate', 'AWS Certified Solutions Architect - Associate', 'Certified Devops Practitioner (CCSD)'].map((skill) => (
+                <span key={skill} className="px-3 py-1 bg-primary-100 dark:bg-primary-900 text-primary-800 dark:text-primary-200 rounded-full text-sm">
+                  {skill}
+                </span>
+              ))}
+            </div>
+          </div>
         </div>
       </section>
 
@@ -111,11 +122,11 @@ export default function AboutPage() {
             <h3 className="text-lg font-semibold">Senior Cloud Consultant</h3>
             <p className="text-primary-600 dark:text-primary-400 mb-2">Galactic Network Sdn Bhd</p>
             <p className="text-gray-600 dark:text-gray-300">
-              Technical delivery project lead 
-              Containerizing application with AWS ECS/EKS setup
-              Architecting microservices and implementing CI/CD pipelines
-              Develop IaC with Terraform for infrastructure automation
-              Consult clients for container and devops solution
+              Technical delivery project lead <br />
+              Containerizing application with AWS ECS/EKS setup <br />
+              Architecting microservices and implementing CI/CD pipelines <br />
+              Develop IaC with Terraform for infrastructure automation <br />
+              Consult clients for container and devops solution <br />
             </p>
           </div>
           
@@ -127,8 +138,8 @@ export default function AboutPage() {
             <h3 className="text-lg font-semibold">Cloud Engineer</h3>
             <p className="text-primary-600 dark:text-primary-400 mb-2">Lazada Malaysia</p>
             <p className="text-gray-600 dark:text-gray-300">
-              Managing and optimizing Alibaba Cloud resources 
-              Consult internal teams for cloud infra solution
+              Managing and optimizing Alibaba Cloud resources <br />
+              Consult internal teams for cloud infra solution <br />
             </p>
           </div>
           
@@ -140,7 +151,7 @@ export default function AboutPage() {
             <h3 className="text-lg font-semibold">Cloud Engineer</h3>
             <p className="text-primary-600 dark:text-primary-400 mb-2">eCloudValley Malaysia</p>
             <p className="text-gray-600 dark:text-gray-300">
-              Deliver AWS solution with client-facing projects
+              Deliver AWS solution with client-facing projects <br />
             </p>
           </div>
         </div>
