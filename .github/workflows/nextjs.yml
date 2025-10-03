@@ -82,13 +82,13 @@ jobs:
       - name: Build with Next.js
         run: ${{ steps.detect-package-manager.outputs.runner }} next build
       #----------------------------------------------------------------#
-      - name: Export static site to out/
-        # Generate a pure static export for GitHub Pages
-        run: ${{ steps.detect-package-manager.outputs.runner }} next export --outdir out
-      - name: Verify out dir
-        run: |
-          echo "Contents of out/:"
-          ls -la out || true
+      # - name: Export static site to out/
+      #   # Generate a pure static export for GitHub Pages
+      #   run: ${{ steps.detect-package-manager.outputs.runner }} next export --outdir out
+      # - name: Verify out dir
+      #   run: |
+      #     echo "Contents of out/:"
+      #     ls -la out || true
       #----------------------------------------------------------------#
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
