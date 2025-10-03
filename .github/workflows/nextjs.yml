@@ -84,7 +84,7 @@ jobs:
       #----------------------------------------------------------------#
       - name: Export static site to out/
         # Generate a pure static export for GitHub Pages
-        run: ${{ steps.detect-package-manager.outputs.runner }} next export -o out
+        run: ${{ steps.detect-package-manager.outputs.runner }} next export --outdir out
       - name: Verify out dir
         run: |
           echo "Contents of out/:"
