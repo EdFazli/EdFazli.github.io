@@ -74,10 +74,10 @@ jobs:
       - name: Install dependencies
         run: ${{ steps.detect-package-manager.outputs.manager }} ${{ steps.detect-package-manager.outputs.command }}
       #----------------------------------------------------------------#
-      - name: Install Playwright browsers (required by many build-time mermaid renderers)
-      # Many rehype/remark mermaid plugins use Playwright/Puppeteer to render diagrams during build.
-      # Install browsers so rendering works during next build/export.
-        run: npx playwright install --with-deps
+      # - name: Install Playwright browsers (required by many build-time mermaid renderers)
+      # # Many rehype/remark mermaid plugins use Playwright/Puppeteer to render diagrams during build.
+      # # Install browsers so rendering works during next build/export.
+      #   run: npx playwright install --with-deps
       #----------------------------------------------------------------#
       - name: Build with Next.js
         run: ${{ steps.detect-package-manager.outputs.runner }} next build
